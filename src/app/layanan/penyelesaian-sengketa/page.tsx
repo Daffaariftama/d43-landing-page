@@ -560,8 +560,19 @@ export default function PenyelesaianSengketaPage() {
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-white relative">
-      {/* Navigation Controls */}
-      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 md:gap-4 items-end">
+      {/* Back Button - Always visible at top */}
+      <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center text-gray-600 hover:text-red-600 transition-colors group bg-white/90 backdrop-blur-sm px-3 py-2 md:px-4 md:py-2 rounded-full shadow-lg text-sm md:text-base"
+        >
+          <ArrowLeft className="w-4 h-4 md:w-4 md:h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span className="hidden sm:inline">Kembali</span>
+        </button>
+      </div>
+
+      {/* Navigation Dots - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 flex-col gap-3 md:gap-4 items-end">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -573,47 +584,43 @@ export default function PenyelesaianSengketaPage() {
           >
             <span
               className={`hidden md:block text-sm font-medium transition-all duration-300 ${currentSlide === index
-                  ? "text-red-600 translate-x-0 opacity-100"
-                  : "text-gray-400 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                ? "text-red-600 translate-x-0 opacity-100"
+                : "text-gray-400 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
                 }`}
             >
               {slideLabels[index]}
             </span>
             <div
               className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 border border-transparent ${currentSlide === index
-                  ? "bg-red-600 scale-125"
-                  : "bg-gray-300 hover:bg-red-400 group-hover:border-red-200"
+                ? "bg-red-600 scale-125"
+                : "bg-gray-300 hover:bg-red-400 group-hover:border-red-200"
                 }`}
             />
           </button>
         ))}
       </div>
 
-      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 z-50 flex gap-2">
+      {/* Slide Navigation Buttons - Always visible at bottom */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 md:bottom-8 md:left-auto md:right-8 md:translate-x-0 z-50 flex gap-2 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 0}
-          className="p-2 md:p-3 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="p-3 md:p-3 rounded-full bg-gray-100 hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
         >
           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
         </button>
+
+        {/* Slide indicator on mobile */}
+        <div className="flex md:hidden items-center justify-center px-3 text-sm font-medium text-gray-700">
+          {currentSlide + 1} / {slides.length}
+        </div>
+
         <button
           onClick={nextSlide}
           disabled={currentSlide === slides.length - 1}
-          className="p-2 md:p-3 rounded-full bg-red-600 shadow-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="p-3 md:p-3 rounded-full bg-red-600 hover:bg-red-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
         >
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
-        </button>
-      </div>
-
-      {/* Back Button */}
-      <div className="absolute top-4 md:top-8 left-4 md:left-8 z-50">
-        <button
-          onClick={() => router.back()}
-          className="flex items-center text-gray-600 hover:text-red-600 transition-colors group bg-white/80 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-sm text-sm md:text-base"
-        >
-          <ArrowLeft className="w-3 h-3 md:w-4 md:h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-          Kembali
         </button>
       </div>
 
