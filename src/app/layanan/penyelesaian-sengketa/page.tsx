@@ -17,25 +17,29 @@ export default function PenyelesaianSengketaPage() {
       title: "Perlem LKPP No 18 Tahun 2018",
       description: "Peraturan Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah tentang Layanan Penyelesaian Sengketa Kontrak Pengadaan Barang/Jasa Pemerintah",
       fileSize: "2.1 MB",
-      type: "PDF"
+      type: "PDF",
+      url: "https://jdih.lkpp.go.id/admin/uploads/documents/Peraturan%20Lembaga%20Nomor%2018%20Tahun%202018_1007_1.pdf"
     },
     {
       title: "Keputusan Deputi IV Nomor 5 Tahun 2025",
       description: "Petunjuk Teknis Penyelesaian Sengketa Pada Tahapan Konsiliasi",
       fileSize: "1.8 MB",
-      type: "PDF"
+      type: "PDF",
+      url: "https://jdih.lkpp.go.id/admin/uploads/documents/Keputusan%20Deputi%20IV%20Nomor%205%20Tahun%202025_2762_1.pdf"
     },
     {
       title: "Keputusan Deputi IV Nomor 1 Tahun 2025",
       description: "Petunjuk Teknis Penyelesaian Sengketa Pada Tahapan Mediasi",
       fileSize: "2.3 MB",
-      type: "PDF"
+      type: "PDF",
+      url: "https://jdih.lkpp.go.id/admin/uploads/documents/Keputusan%20Deputi%20IV%20Nomor%201%20Tahun%202025_2619_1.pdf"
     },
     {
       title: "Keputusan Deputi IV Nomor 2 Tahun 2025",
       description: "Petunjuk Teknis Penyelesaian Sengketa Pada Tahap Arbitrase",
       fileSize: "2.0 MB",
-      type: "PDF"
+      type: "PDF",
+      url: "https://jdih.lkpp.go.id/admin/uploads/documents/Keputusan%20Deputi%20IV%20Nomor%202%20Tahun%202025_2633_1.pdf"
     }
   ];
 
@@ -440,7 +444,7 @@ export default function PenyelesaianSengketaPage() {
           <div className="space-y-4">
             {regulations.map((regulation, index) => (
               <div key={index} className="bg-white rounded-xl p-4 md:p-6 border border-gray-200 hover:border-red-300 transition-all duration-300 group hover:shadow-lg">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex items-start space-x-4 md:space-x-6">
                     <div className="bg-red-100 rounded-xl p-3 md:p-4 group-hover:bg-red-500 group-hover:text-white transition-colors">
                       <FileText className="w-6 h-6 md:w-8 md:h-8 text-red-600 group-hover:text-white" />
@@ -454,9 +458,17 @@ export default function PenyelesaianSengketaPage() {
                       </div>
                     </div>
                   </div>
-                  <button className="bg-red-500 hover:bg-red-600 text-white p-2 md:p-3 rounded-xl transition-colors group-hover:scale-110 shadow-md">
-                    <Download className="w-5 h-5 md:w-6 md:h-6" />
-                  </button>
+                  <div className="flex items-center space-x-2 self-end md:self-center">
+                    <a
+                      href={regulation.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium shadow-md hover:shadow-lg"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Download
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -481,14 +493,14 @@ export default function PenyelesaianSengketaPage() {
                 <Phone className="w-6 h-6 md:w-8 md:h-8 text-red-500" />
               </div>
               <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Telepon</h3>
-              <p className="text-gray-600 text-sm md:text-base">(021) 1234-5678</p>
+              <p className="text-gray-600 text-sm md:text-base">‪+62 838‑9029‑4556‬</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className="bg-white w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Mail className="w-6 h-6 md:w-8 md:h-8 text-red-500" />
               </div>
               <h3 className="font-bold text-gray-900 text-lg md:text-xl mb-2">Email</h3>
-              <p className="text-gray-600 text-sm md:text-base">sengketa@lkpp.go.id</p>
+              <p className="text-gray-600 text-sm md:text-base">layanan@lkpp.go.id</p>
             </div>
             <div className="bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className="bg-white w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
@@ -712,100 +724,141 @@ export default function PenyelesaianSengketaPage() {
       </AnimatePresence>
 
       {/* Infographic Modal */}
+      {/* Infographic Modal */}
       <AnimatePresence>
         {showInfographic && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
             onClick={() => setShowInfographic(false)}
           >
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              initial={{ y: 50, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 50, opacity: 0, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
               onClick={e => e.stopPropagation()}
             >
-              <div className="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center z-10">
+              {/* Header */}
+              <div className="bg-white border-b border-gray-100 p-5 md:p-6 flex justify-between items-center z-10 sticky top-0">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900">Alur Permohonan</h3>
-                  <p className="text-gray-500 text-sm">Tahapan pengajuan penyelesaian sengketa</p>
+                  <p className="text-gray-500 text-xs md:text-sm mt-1">Tahapan pengajuan penyelesaian sengketa</p>
                 </div>
                 <button
                   onClick={() => setShowInfographic(false)}
-                  className="bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full transition-colors"
+                  className="bg-gray-50 hover:bg-gray-100 text-gray-500 hover:text-red-600 p-2 rounded-full transition-all duration-200"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="p-6 md:p-8">
-                <div className="relative">
-                  {/* Connecting Line */}
-                  <div className="absolute left-6 md:left-8 top-8 bottom-8 w-1 bg-gray-100" />
+              {/* Content */}
+              <div className="overflow-y-auto p-5 md:p-8">
+                <div className="relative pl-2 md:pl-4">
+                  {/* Timeline Line */}
+                  <div className="absolute left-[27px] md:left-[31px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-red-500 via-red-200 to-gray-100" />
 
                   {/* Steps */}
-                  <div className="space-y-8 md:space-y-12 relative">
+                  <div className="space-y-8 relative">
                     {[
                       {
-                        title: "1. Registrasi Permohonan",
+                        title: "Registrasi Permohonan",
                         desc: "Pemohon mengajukan permohonan tertulis melalui Sekretariat Layanan.",
-                        icon: FileText
+                        icon: FileText,
+                        duration: null,
+                        color: "bg-red-500"
                       },
                       {
-                        title: "2. Evaluasi Pendahuluan",
-                        desc: "Sekretariat memeriksa kelengkapan administrasi dan kesesuaian permohonan (10 hari kerja).",
-                        icon: Search
+                        title: "Evaluasi Pendahuluan",
+                        desc: "Sekretariat memeriksa kelengkapan administrasi dan kesesuaian permohonan.",
+                        icon: Search,
+                        duration: "10 Hari Kerja",
+                        color: "bg-red-500"
                       },
                       {
-                        title: "3. Penunjukan Mediator/Konsiliator/Arbiter",
+                        title: "Penunjukan Mediator/Arbiter",
                         desc: "Para Pihak sepakat menunjuk atau ditunjuk oleh Sekretariat jika tidak sepakat.",
-                        icon: Users
+                        icon: Users,
+                        duration: null,
+                        color: "bg-red-500"
                       },
                       {
-                        title: "4. Proses Penyelesaian",
-                        desc: "Pelaksanaan pertemuan Mediasi/Konsiliasi (30 hari) atau Sidang Arbitrase (90 hari).",
-                        icon: Clock
+                        title: "Proses Penyelesaian",
+                        desc: "Pelaksanaan pertemuan Mediasi/Konsiliasi atau Sidang Arbitrase.",
+                        icon: Clock,
+                        duration: "30 - 90 Hari",
+                        color: "bg-red-500"
                       },
                       {
-                        title: "5. Kesepakatan / Putusan",
+                        title: "Kesepakatan / Putusan",
                         desc: "Penandatanganan Akta Perdamaian atau Pembacaan Putusan Arbitrase.",
-                        icon: CheckCircle
+                        icon: CheckCircle,
+                        duration: "Final",
+                        color: "bg-red-500"
                       }
                     ].map((step, idx) => (
-                      <div key={idx} className="flex items-start relative">
-                        <div className="bg-red-600 text-white w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shadow-lg z-10 mr-4 md:mr-6 flex-shrink-0">
-                          <step.icon className="w-6 h-6 md:w-8 md:h-8" />
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 + 0.2 }}
+                        className="flex items-start relative group"
+                      >
+                        {/* Number/Icon Bubble */}
+                        <div className={`relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg border-4 border-white transition-transform duration-300 group-hover:scale-110 flex-shrink-0 ${step.color} text-white`}>
+                          <step.icon className="w-6 h-6" />
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center border-2 border-gray-100 text-xs font-bold text-gray-600 shadow-sm">
+                            {idx + 1}
+                          </div>
                         </div>
-                        <div className="bg-gray-50 rounded-2xl p-4 md:p-6 flex-grow border border-gray-100 hover:border-red-200 transition-colors">
-                          <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
-                          <p className="text-gray-600 text-sm md:text-base">{step.desc}</p>
+
+                        {/* Card */}
+                        <div className="ml-4 md:ml-6 bg-white rounded-xl p-4 md:p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex-grow group-hover:border-red-100 w-full">
+                          <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-2">
+                            <h4 className="text-base md:text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors">
+                              {step.title}
+                            </h4>
+                            {step.duration && (
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700 border border-red-100 self-start md:self-auto whitespace-nowrap">
+                                <Clock className="w-3 h-3 mr-1" />
+                                {step.duration}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {step.desc}
+                          </p>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-gray-50 border-t border-gray-100 text-center">
+              {/* Footer */}
+              <div className="p-5 bg-gray-50 border-t border-gray-100 text-center sticky bottom-0 z-10">
                 <button
                   onClick={() =>
                     window.open('https://eoffice.lkpp.go.id/persuratan', '_blank', 'noopener,noreferrer')
                   }
-
-                  className="bg-red-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors shadow-lg flex items-center justify-center mx-auto"
+                  className="w-full md:w-auto bg-red-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-200 active:scale-95 flex items-center justify-center mx-auto group"
                 >
-                  Saya Mengerti, Lanjutkan
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                  <span>Saya Mengerti, Lanjutkan</span>
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+
+
+
+    </div >
   );
 }
 
