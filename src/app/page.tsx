@@ -426,6 +426,7 @@ import { Menu, Play, Search, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import AboutUs from "@/app/components/AboutUs";
 import Layanan from "@/app/components/Layanan";
+import Agenda from "@/app/components/Agenda";
 import ModernFooter from "@/app/components/ModernFooter";
 import TestimonialsSection from "@/app/components/TestimonialSection";
 
@@ -455,7 +456,7 @@ const LKPPWebsite = () => {
     if (element) {
       // Tutup mobile menu jika terbuka
       setIsMenuOpen(false);
-      
+
       // Smooth scroll ke element
       element.scrollIntoView({
         behavior: 'smooth',
@@ -534,13 +535,12 @@ const LKPPWebsite = () => {
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Navigation */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isMenuOpen
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen
             ? "bg-red-800/95"
             : isScrolled
-            ? "bg-red-800/95 backdrop-blur-md shadow-lg border-b border-white/10"
-            : "bg-transparent"
-        }`}
+              ? "bg-red-800/95 backdrop-blur-md shadow-lg border-b border-white/10"
+              : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center justify-between">
@@ -570,7 +570,7 @@ const LKPPWebsite = () => {
               >
                 <span>Profil</span>
               </button>
-              
+
               <button
                 onClick={() => scrollToSection('layanan')}
                 className="text-sm hover:text-red-300 transition-colors flex items-center space-x-1"
@@ -589,7 +589,7 @@ const LKPPWebsite = () => {
                     <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                   </svg>
                 </button>
-                
+
                 {/* Tooltip on Hover */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
                   Dalam Pengembangan
@@ -607,7 +607,7 @@ const LKPPWebsite = () => {
                     <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                   </svg>
                 </button>
-                
+
                 {/* Tooltip on Hover */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
                   Dalam Pengembangan
@@ -625,7 +625,7 @@ const LKPPWebsite = () => {
                     <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                   </svg>
                 </button>
-                
+
                 {/* Tooltip on Hover */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
                   Dalam Pengembangan
@@ -643,7 +643,7 @@ const LKPPWebsite = () => {
                     <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                   </svg>
                 </button>
-                
+
                 {/* Tooltip on Hover */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
                   Dalam Pengembangan
@@ -683,7 +683,7 @@ const LKPPWebsite = () => {
               >
                 Profil
               </button>
-              
+
               <button
                 onClick={() => scrollToSection('layanan')}
                 className="block text-sm hover:text-red-300 transition-colors w-full text-left py-2"
@@ -793,13 +793,12 @@ const LKPPWebsite = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-1000 ease-out ${
-                currentSlide === index
+              className={`absolute inset-0 transition-all duration-1000 ease-out ${currentSlide === index
                   ? "opacity-100 scale-100 z-10"
                   : index === (currentSlide - 1 + slides.length) % slides.length
-                  ? "opacity-0 scale-95 z-0"
-                  : "opacity-0 scale-105 z-0"
-              }`}
+                    ? "opacity-0 scale-95 z-0"
+                    : "opacity-0 scale-105 z-0"
+                }`}
             >
               <img
                 src={slide.image}
@@ -834,11 +833,10 @@ const LKPPWebsite = () => {
             <div className="w-full">
               <div className="max-w-full lg:max-w-3xl">
                 <div
-                  className={`transition-all duration-800 ease-out ${
-                    isAnimating
+                  className={`transition-all duration-800 ease-out ${isAnimating
                       ? "opacity-0 transform translate-x-[-30px]"
                       : "opacity-100 transform translate-x-0"
-                  }`}
+                    }`}
                 >
                   <p className="text-red-200 text-base sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-3 md:mb-4">
                     {slides[currentSlide].subtitle}
@@ -863,20 +861,18 @@ const LKPPWebsite = () => {
                       className="group flex flex-col items-center space-y-2 sm:space-y-1 sm:space-y-2 disabled:cursor-not-allowed"
                     >
                       <span
-                        className={`text-xl sm:text-base md:text-xl lg:text-2xl font-bold transition-all ${
-                          currentSlide === index
+                        className={`text-xl sm:text-base md:text-xl lg:text-2xl font-bold transition-all ${currentSlide === index
                             ? "text-white scale-110"
                             : "text-white/40"
-                        }`}
+                          }`}
                       >
                         0{index + 1}
                       </span>
                       <div
-                        className={`h-1.5 sm:h-1 rounded-full transition-all duration-500 ${
-                          currentSlide === index
+                        className={`h-1.5 sm:h-1 rounded-full transition-all duration-500 ${currentSlide === index
                             ? "bg-red-300 w-10 sm:w-8 md:w-10 lg:w-16"
                             : "bg-white/30 w-8 sm:w-6 md:w-8 lg:w-12"
-                        }`}
+                          }`}
                       ></div>
                     </button>
                   ))}
@@ -912,9 +908,13 @@ const LKPPWebsite = () => {
       <section id="profil">
         <AboutUs />
       </section>
-      
+
       <section id="layanan">
         <Layanan />
+      </section>
+      
+      <section id="agenda">
+        <Agenda />
       </section>
 
       <TestimonialsSection />
