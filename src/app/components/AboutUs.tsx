@@ -61,16 +61,11 @@ const AboutUs = () => {
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
 
-                  {/* Loading Skeleton */}
-                  {isLoading && (
-                    <div className="absolute inset-0 m-3 md:m-4 bg-gray-200 animate-pulse rounded-lg"></div>
-                  )}
 
                   <img
-                    src="/director.png"
+                    src="/foto-direktur.webp"
                     alt="Direktur LKPP"
-                    className={`w-full aspect-square object-cover rounded-lg shadow-inner transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-                    onLoad={() => setIsLoading(false)}
+                    className={`w-full aspect-square object-cover rounded-lg shadow-inner transition-opacity duration-500`}
                   />
                 </div>
               </div>
