@@ -1,6 +1,9 @@
 "use client"
 
+import { useState } from "react";
+
 const AboutUs = () => {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <section id="profil" className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,7 +11,7 @@ const AboutUs = () => {
         <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 lg:p-12 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute top-0 right-0 w-20 h-20 bg-red-50 rounded-full -translate-y-10 translate-x-10 opacity-40"></div>
-          
+
           <div className="relative z-10 flex flex-col lg:flex-row gap-6 md:gap-8 items-start">
             {/* Left Content - Text */}
             <div className="flex-1 space-y-4 md:space-y-6">
@@ -54,14 +57,20 @@ const AboutUs = () => {
               <div className="relative group">
                 {/* Photo Container */}
                 <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-xl p-3 md:p-4 shadow-lg border border-gray-100">
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center shadow-md">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center shadow-md z-10">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  
-                  <img 
-                    src="https://www.lkpp.go.id/uploads/pejabat/1740478254_19.png" 
+
+                  {/* Loading Skeleton */}
+                  {isLoading && (
+                    <div className="absolute inset-0 m-3 md:m-4 bg-gray-200 animate-pulse rounded-lg"></div>
+                  )}
+
+                  <img
+                    src="/director.png"
                     alt="Direktur LKPP"
-                    className="w-full aspect-square object-cover rounded-lg shadow-inner"
+                    className={`w-full aspect-square object-cover rounded-lg shadow-inner transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => setIsLoading(false)}
                   />
                 </div>
               </div>

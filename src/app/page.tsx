@@ -536,10 +536,10 @@ const LKPPWebsite = () => {
       {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${isMenuOpen
-            ? "bg-red-800/95"
-            : isScrolled
-              ? "bg-red-800/95 backdrop-blur-md shadow-lg border-b border-white/10"
-              : "bg-transparent"
+          ? "bg-red-800/95"
+          : isScrolled
+            ? "bg-red-800/95 backdrop-blur-md shadow-lg border-b border-white/10"
+            : "bg-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
@@ -547,7 +547,7 @@ const LKPPWebsite = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               <img
-                src="https://www.lkpp.go.id/assets/images/logo/Logo_1b.png"
+                src="/logo-lkpp.png"
                 alt="Logo LKPP"
                 className="h-8 sm:h-10 md:h-12 w-auto"
               />
@@ -794,10 +794,10 @@ const LKPPWebsite = () => {
             <div
               key={index}
               className={`absolute inset-0 transition-all duration-1000 ease-out ${currentSlide === index
-                  ? "opacity-100 scale-100 z-10"
-                  : index === (currentSlide - 1 + slides.length) % slides.length
-                    ? "opacity-0 scale-95 z-0"
-                    : "opacity-0 scale-105 z-0"
+                ? "opacity-100 scale-100 z-10"
+                : index === (currentSlide - 1 + slides.length) % slides.length
+                  ? "opacity-0 scale-95 z-0"
+                  : "opacity-0 scale-105 z-0"
                 }`}
             >
               <img
@@ -834,8 +834,8 @@ const LKPPWebsite = () => {
               <div className="max-w-full lg:max-w-3xl">
                 <div
                   className={`transition-all duration-800 ease-out ${isAnimating
-                      ? "opacity-0 transform translate-x-[-30px]"
-                      : "opacity-100 transform translate-x-0"
+                    ? "opacity-0 transform translate-x-[-30px]"
+                    : "opacity-100 transform translate-x-0"
                     }`}
                 >
                   <p className="text-red-200 text-base sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-3 md:mb-4">
@@ -862,16 +862,16 @@ const LKPPWebsite = () => {
                     >
                       <span
                         className={`text-xl sm:text-base md:text-xl lg:text-2xl font-bold transition-all ${currentSlide === index
-                            ? "text-white scale-110"
-                            : "text-white/40"
+                          ? "text-white scale-110"
+                          : "text-white/40"
                           }`}
                       >
                         0{index + 1}
                       </span>
                       <div
                         className={`h-1.5 sm:h-1 rounded-full transition-all duration-500 ${currentSlide === index
-                            ? "bg-red-300 w-10 sm:w-8 md:w-10 lg:w-16"
-                            : "bg-white/30 w-8 sm:w-6 md:w-8 lg:w-12"
+                          ? "bg-red-300 w-10 sm:w-8 md:w-10 lg:w-16"
+                          : "bg-white/30 w-8 sm:w-6 md:w-8 lg:w-12"
                           }`}
                       ></div>
                     </button>
@@ -912,7 +912,7 @@ const LKPPWebsite = () => {
       <section id="layanan">
         <Layanan />
       </section>
-      
+
       <section id="agenda">
         <Agenda />
       </section>

@@ -76,12 +76,12 @@
 //               <div className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-red-500/10 border border-red-500/20 mb-4 group-hover:bg-red-500/20 transition-colors mx-auto">
 //                 <item.icon className="w-5 h-5 md:w-6 md:h-6 text-red-400" />
 //               </div>
-              
+
 //               {/* Title */}
 //               <h3 className="text-sm md:text-base font-semibold text-white text-center mb-2 md:mb-3 line-clamp-2 group-hover:text-red-300 transition-colors">
 //                 {item.title}
 //               </h3>
-              
+
 //               {/* Description */}
 //               <p className="text-xs md:text-sm text-gray-400 text-center leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors">
 //                 {item.description}
@@ -146,8 +146,8 @@ const LayananSection = () => {
       icon: Scale,
       title: "Pemberi Keterangan Ahli",
       description: "Layanan penyediaan keterangan ahli dalam proses hukum pengadaan barang/jasa pemerintah dengan standar profesional dan berintegritas.",
-      status: "development", // tambah status
-      available: false
+      status: "available", // tambah status
+      available: true
     },
     {
       id: "pemberian-pendapat-hukum",
@@ -162,7 +162,7 @@ const LayananSection = () => {
       icon: Users,
       title: "Advisor",
       description: "Konsultasi dan pendampingan hukum dalam penyelesaian permasalahan pengadaan barang/jasa pemerintah.",
-      status: "development", 
+      status: "development",
       available: false
     },
     {
@@ -209,7 +209,7 @@ const LayananSection = () => {
             </h2>
             <div className="w-20 h-1 bg-red-500 mx-auto mb-6 rounded-full"></div>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Berbagai layanan unggulan untuk mendukung tata kelola pengadaan barang/jasa pemerintah 
+              Berbagai layanan unggulan untuk mendukung tata kelola pengadaan barang/jasa pemerintah
               yang profesional dan berintegritas
             </p>
           </div>
@@ -219,11 +219,10 @@ const LayananSection = () => {
             {layanan.map((item, index) => (
               <div
                 key={index}
-                className={`group relative rounded-xl border p-4 md:p-6 transition-all duration-300 cursor-pointer ${
-                  item.available
+                className={`group relative rounded-xl border p-4 md:p-6 transition-all duration-300 cursor-pointer ${item.available
                     ? "bg-gray-800/50 hover:bg-gray-700/50 border-gray-700 hover:border-red-500/30 hover:transform hover:scale-105"
                     : "bg-gray-900/60 border-gray-600 opacity-80"
-                }`}
+                  }`}
                 onMouseEnter={() => setActiveCard(index)}
                 onMouseLeave={() => setActiveCard(null)}
                 onClick={() => handleCardClick(item)}
@@ -239,31 +238,27 @@ const LayananSection = () => {
                 )}
 
                 {/* Icon */}
-                <div className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg border mb-4 transition-colors mx-auto ${
-                  item.available
+                <div className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg border mb-4 transition-colors mx-auto ${item.available
                     ? "bg-red-500/10 border-red-500/20 group-hover:bg-red-500/20"
                     : "bg-gray-700/50 border-gray-600"
-                }`}>
-                  <item.icon className={`w-5 h-5 md:w-6 md:h-6 ${
-                    item.available ? "text-red-400" : "text-gray-400"
-                  }`} />
+                  }`}>
+                  <item.icon className={`w-5 h-5 md:w-6 md:h-6 ${item.available ? "text-red-400" : "text-gray-400"
+                    }`} />
                 </div>
-                
+
                 {/* Title */}
-                <h3 className={`text-sm md:text-base font-semibold text-center mb-2 md:mb-3 line-clamp-2 transition-colors ${
-                  item.available
+                <h3 className={`text-sm md:text-base font-semibold text-center mb-2 md:mb-3 line-clamp-2 transition-colors ${item.available
                     ? "text-white group-hover:text-red-300"
                     : "text-gray-400"
-                }`}>
+                  }`}>
                   {item.title}
                 </h3>
-                
+
                 {/* Description */}
-                <p className={`text-xs md:text-sm text-center leading-relaxed line-clamp-3 transition-colors ${
-                  item.available
+                <p className={`text-xs md:text-sm text-center leading-relaxed line-clamp-3 transition-colors ${item.available
                     ? "text-gray-400 group-hover:text-gray-300"
                     : "text-gray-500"
-                }`}>
+                  }`}>
                   {item.description}
                 </p>
 
@@ -308,13 +303,13 @@ const LayananSection = () => {
                 Tim ahli kami siap membantu menyelesaikan permasalahan hukum terkait pengadaan barang/jasa pemerintah
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button 
+                <button
                   className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors"
                   onClick={() => router.push('/layanan/penyelesaian-sengketa')}
                 >
                   Konsultasi Sekarang
                 </button>
-                <button 
+                <button
                   className="border border-gray-600 hover:border-red-500 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-medium text-sm transition-colors"
                   onClick={() => setShowDevelopmentModal(true)}
                 >
@@ -334,13 +329,13 @@ const LayananSection = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500/20 rounded-full mb-4">
                 <Construction className="w-8 h-8 text-yellow-400" />
               </div>
-              
+
               <h3 className="text-xl font-bold text-white mb-2">
                 Layanan Dalam Pengembangan
               </h3>
-              
+
               <p className="text-gray-300 mb-6 text-sm">
-                {selectedLayanan 
+                {selectedLayanan
                   ? `Layanan "${selectedLayanan}" sedang dalam tahap pengembangan.`
                   : "Beberapa layanan kami masih dalam tahap pengembangan dan akan segera hadir."
                 }
@@ -357,13 +352,13 @@ const LayananSection = () => {
               </div>
 
               <div className="flex space-x-3">
-                <button 
+                <button
                   onClick={() => router.push('/layanan/penyelesaian-sengketa')}
                   className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium text-sm transition-colors"
                 >
                   Lihat Layanan Tersedia
                 </button>
-                <button 
+                <button
                   onClick={() => setShowDevelopmentModal(false)}
                   className="flex-1 border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white py-3 rounded-lg font-medium text-sm transition-colors"
                 >
