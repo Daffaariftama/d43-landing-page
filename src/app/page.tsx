@@ -545,7 +545,10 @@ const LKPPWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div
+              className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img
                 src="/logo-lkpp.png"
                 alt="Logo LKPP"
@@ -578,78 +581,14 @@ const LKPPWebsite = () => {
                 <span>Layanan</span>
               </button>
 
-              {/* Menu dalam development */}
-              <div className="relative group">
-                <button
-                  disabled
-                  className="text-sm text-gray-400 opacity-60 cursor-not-allowed flex items-center space-x-1 transition-all"
-                >
-                  <span>Kebijakan</span>
-                  <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
-                </button>
 
-                {/* Tooltip on Hover */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                  Dalam Pengembangan
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-500 rotate-45"></div>
-                </div>
-              </div>
 
-              <div className="relative group">
-                <button
-                  disabled
-                  className="text-sm text-gray-400 opacity-60 cursor-not-allowed flex items-center space-x-1 transition-all"
-                >
-                  <span>Informasi</span>
-                  <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
-                </button>
-
-                {/* Tooltip on Hover */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                  Dalam Pengembangan
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-500 rotate-45"></div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button
-                  disabled
-                  className="text-sm text-gray-400 opacity-60 cursor-not-allowed flex items-center space-x-1 transition-all"
-                >
-                  <span>Berita</span>
-                  <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
-                </button>
-
-                {/* Tooltip on Hover */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                  Dalam Pengembangan
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-500 rotate-45"></div>
-                </div>
-              </div>
-
-              <div className="relative group">
-                <button
-                  disabled
-                  className="text-sm text-gray-400 opacity-60 cursor-not-allowed flex items-center space-x-1 transition-all"
-                >
-                  <span>Data & Statistik</span>
-                  <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
-                </button>
-
-                {/* Tooltip on Hover */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-yellow-500 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                  Dalam Pengembangan
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-yellow-500 rotate-45"></div>
-                </div>
-              </div>
+              <button
+                onClick={() => scrollToSection('agenda')}
+                className="text-sm hover:text-red-300 transition-colors flex items-center space-x-1"
+              >
+                <span>Agenda</span>
+              </button>
 
               <button
                 onClick={() => scrollToSection('kontak')}
@@ -660,10 +599,8 @@ const LKPPWebsite = () => {
             </div>
 
             {/* Search & Mobile Menu */}
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <button className="hover:text-red-300 transition-colors">
-                <Search size={18} className="sm:w-5 sm:h-5" />
-              </button>
+            <div className="flex items-center space-x-3 sm:space-x-4 lg:hidden">
+
               <button
                 className="lg:hidden hover:text-red-300 transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -691,54 +628,14 @@ const LKPPWebsite = () => {
                 Layanan
               </button>
 
-              {/* Menu dalam development */}
-              <div className="relative group py-2">
-                <div className="flex items-center justify-between text-sm text-gray-400 opacity-60 cursor-not-allowed">
-                  <span>Kebijakan</span>
-                  <div className="flex items-center space-x-1">
-                    <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-yellow-400 text-xs">Soon</span>
-                  </div>
-                </div>
-              </div>
 
-              <div className="relative group py-2">
-                <div className="flex items-center justify-between text-sm text-gray-400 opacity-60 cursor-not-allowed">
-                  <span>Informasi</span>
-                  <div className="flex items-center space-x-1">
-                    <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-yellow-400 text-xs">Soon</span>
-                  </div>
-                </div>
-              </div>
 
-              <div className="relative group py-2">
-                <div className="flex items-center justify-between text-sm text-gray-400 opacity-60 cursor-not-allowed">
-                  <span>Berita</span>
-                  <div className="flex items-center space-x-1">
-                    <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-yellow-400 text-xs">Soon</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative group py-2">
-                <div className="flex items-center justify-between text-sm text-gray-400 opacity-60 cursor-not-allowed">
-                  <span>Data & Statistik</span>
-                  <div className="flex items-center space-x-1">
-                    <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-yellow-400 text-xs">Soon</span>
-                  </div>
-                </div>
-              </div>
+              <button
+                onClick={() => scrollToSection('agenda')}
+                className="block text-sm hover:text-red-300 transition-colors w-full text-left py-2"
+              >
+                Agenda
+              </button>
 
               <button
                 onClick={() => scrollToSection('kontak')}

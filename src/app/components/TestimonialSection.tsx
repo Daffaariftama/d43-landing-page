@@ -4,7 +4,7 @@ import { Award, Clock, Heart, Quote, Star, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const TestimonialsSection = () => {
-  const [hoveredCard, setHoveredCard] = useState <number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="min-h-screen py-20 bg-gradient-to-br from-white via-red-50/20 to-gray-50/30 relative overflow-hidden">
+    <section className="min-h-screen py-20 bg-gradient-to-b from-gray-50 via-white to-red-50/10 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -169,23 +169,7 @@ const TestimonialsSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center px-6 py-3 rounded-2xl bg-white shadow-lg border border-gray-100 mb-6"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="flex items-center space-x-2">
-              <motion.div
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Heart className="w-5 h-5 text-red-600" />
-              </motion.div>
-              <span className="text-red-600 font-semibold text-sm tracking-wide">
-                TESTIMONIALS
-              </span>
-            </div>
-          </motion.div>
+
           <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
             Kata <span className="text-red-600">Mereka</span>
           </h2>
@@ -208,13 +192,11 @@ const TestimonialsSection = () => {
               initial="hidden"
               animate="visible"
               custom={testimonial.delay}
-              className={`relative bg-white rounded-3xl shadow-xl border-2 p-6 transition-all duration-500 cursor-pointer transform ${
-                testimonial.rotation
-              } ${
-                hoveredCard === index
+              className={`relative bg-white rounded-3xl shadow-xl border-2 p-6 transition-all duration-500 cursor-pointer transform ${testimonial.rotation
+                } ${hoveredCard === index
                   ? "z-50 scale-105 shadow-2xl border-red-400 -translate-y-3"
                   : "z-40 hover:z-45 scale-100 border-gray-100 hover:border-red-200"
-              }`}
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
               whileHover={{
@@ -224,9 +206,8 @@ const TestimonialsSection = () => {
             >
               {/* Floating Quote Icon */}
               <motion.div
-                className={`absolute -top-3 -right-3 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center ${
-                  hoveredCard === index ? "scale-110" : "scale-100"
-                } transition-transform duration-300`}
+                className={`absolute -top-3 -right-3 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center ${hoveredCard === index ? "scale-110" : "scale-100"
+                  } transition-transform duration-300`}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
@@ -266,11 +247,10 @@ const TestimonialsSection = () => {
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <Star
-                      className={`w-5 h-5 ${
-                        i < testimonial.rating
+                      className={`w-5 h-5 ${i < testimonial.rating
                           ? "text-yellow-400 fill-current"
                           : "text-gray-300"
-                      }`}
+                        }`}
                     />
                   </motion.div>
                 ))}
@@ -278,9 +258,8 @@ const TestimonialsSection = () => {
 
               {/* Hover Effect */}
               <motion.div
-                className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-red-500/5 to-transparent opacity-0 ${
-                  hoveredCard === index ? "opacity-100" : ""
-                } transition-opacity duration-300`}
+                className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-red-500/5 to-transparent opacity-0 ${hoveredCard === index ? "opacity-100" : ""
+                  } transition-opacity duration-300`}
               />
             </motion.div>
           ))}

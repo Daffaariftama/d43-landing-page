@@ -34,3 +34,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🎯 Poin Presentasi Website
+
+Berikut adalah poin-poin utama untuk presentasi pengembangan website Landing Page LKPP (Direktorat Penanganan Permasalahan Hukum):
+
+### 1. 🎨 Modern & Professional UI/UX
+- **Corporate Identity Kuat**: Menggunakan palet warna resmi (Merah/Putih) dengan nuansa modern dan profesional.
+- **Glassmorphism Design**: Implementasi efek transparan (blur) pada navbar dan elemen UI untuk kesan futuristik namun tetap elegan.
+- **Responsive Navigation**: Navbar yang adaptif (transparent saat di atas, solid/glass saat di-scroll) dengan dukungan menu mobile yang responsif.
+
+### 2. 🚀 Fitur Unggulan (Core Features)
+- **Dynamic Hero Section**: Slider informasi otomatis dengan animasi transisi yang halus dan integrasi Video Profil Pop-up.
+- **Interactive Service Grid**: Tampilan layanan dalam bentuk card interaktif dengan status indikator:
+  - ✅ **Available**: Layanan yang sudah siap digunakan (contoh: Penyelesaian Sengketa).
+  - 🚧 **Coming Soon**: Indikator visual untuk layanan dalam tahap pengembangan.
+- **Smart Feedback System**: Modal informatif yang muncul saat mengakses fitur yang belum tersedia (User Education).
+
+### 3. 🛠️ Tech Stack & Performance
+- **Framework**: Built with **Next.js 15 (App Router)** untuk performa tinggi dan SEO optimized.
+- **Styling**: **Tailwind CSS** untuk utility-first styling yang cepat dan konsisten.
+- **Type Safety**: Full **TypeScript** implementation untuk meminimalisir bug saat runtime.
+- **Icons**: Menggunakan **Lucide React** untuk ikonografi yang ringan dan konsisten.
+
+### 4. 📱 User Experience Flow
+- **Smooth Scrolling**: Navigasi antar bagian halaman yang halus tanpa reload.
+- **Micro-interactions**: Efek hover, scale, dan transisi warna yang memberikan feedback visual kepada pengguna.
+- **Informative Empty States**: Penanganan yang baik untuk fitur yang belum siap agar pengguna tidak bingung.
+
+### 5. 🔜 Roadmap Pengembangan
+- Integrasi penuh modul "Pemberian Pendapat Hukum" dan "Advisor".
+- Pengembangan fitur "Pengaduan Whistleblowing System".
+- Dashboard admin untuk manajemen konten berita dan agenda.
+
