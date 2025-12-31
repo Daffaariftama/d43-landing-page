@@ -37,7 +37,6 @@ export default function ProbityAdvicePage() {
             </div>
             <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 leading-tight">
               Probity Advice
-              
             </h1>
             <p className="text-base md:text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
               Layanan pemberian pendapat atau saran pada tiap tahapan pengadaan untuk mencapai value for money dalam Pengadaan Barang/Jasa.

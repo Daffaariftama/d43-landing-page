@@ -479,7 +479,7 @@ const LKPPWebsite = () => {
     {
       title: "Kolaborasi Menuju Indonesia Maju",
       subtitle: "Mendorong terciptanya ekosistem pengadaan yang berkelanjutan",
-      image: "https://picsum.photos/seed/lkpp3/1920/1080",
+      image: "/images/hero-slide-3.jpg",
     },
   ];
 
